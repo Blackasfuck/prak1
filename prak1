@@ -9,12 +9,12 @@ public class Vehicle
 
     public void StartEngine()
     {
-        Console.WriteLine($"{Make} {Model} engine started.");
+        Console.WriteLine($"{Make} {Model} запущен.");
     }
 
     public void StopEngine()
     {
-        Console.WriteLine($"{Make} {Model} engine stopped.");
+        Console.WriteLine($"{Make} {Model} остановлен.");
     }
 }
 
@@ -37,13 +37,13 @@ public class Garage
     public void AddVehicle(Vehicle vehicle)
     {
         vehicles.Add(vehicle);
-        Console.WriteLine($"{vehicle.Make} {vehicle.Model} added to garage.");
+        Console.WriteLine($"{vehicle.Make} {vehicle.Model} добавлен в гараж.");
     }
 
     public void RemoveVehicle(Vehicle vehicle)
     {
         vehicles.Remove(vehicle);
-        Console.WriteLine($"{vehicle.Make} {vehicle.Model} removed from garage.");
+        Console.WriteLine($"{vehicle.Make} {vehicle.Model} удален из гаража.");
     }
 
     public List<Vehicle> Vehicles => vehicles;
@@ -56,13 +56,13 @@ public class Fleet
     public void AddGarage(Garage garage)
     {
         garages.Add(garage);
-        Console.WriteLine("Garage added to fleet.");
+        Console.WriteLine("Гараж добавлен в автопарк.");
     }
 
     public void RemoveGarage(Garage garage)
     {
         garages.Remove(garage);
-        Console.WriteLine("Garage removed from fleet.");
+        Console.WriteLine("Гараж удален из автопарка.");
     }
 
     public List<Vehicle> SearchVehicles(string make)
@@ -89,8 +89,8 @@ public class Program
         var garage1 = new Garage();
         var garage2 = new Garage();
 
-        var car1 = new Car { Make = "Toyota", Model = "Camry", Year = 2020, NumberOfDoors = 4, TransmissionType = "Automatic" };
-        var motorcycle1 = new Motorcycle { Make = "Harley-Davidson", Model = "Street 750", Year = 2019, BodyType = "Cruiser", HasSideCar = false };
+        var car1 = new Car { Make = "Toyota", Model = "Camry", Year = 2020, NumberOfDoors = 4, TransmissionType = "Автоматическая" };
+        var motorcycle1 = new Motorcycle { Make = "Harley-Davidson", Model = "Street 750", Year = 2019, BodyType = "Круизер", HasSideCar = false };
 
         garage1.AddVehicle(car1);
         garage1.AddVehicle(motorcycle1);
@@ -103,7 +103,7 @@ public class Program
         var foundVehicles = fleet.SearchVehicles("Harley-Davidson");
         foreach (var vehicle in foundVehicles)
         {
-            Console.WriteLine($"Found vehicle: {vehicle.Make} {vehicle.Model}");
+            Console.WriteLine($"Найден транспорт: {vehicle.Make} {vehicle.Model}");
         }
     }
 }
